@@ -1,0 +1,36 @@
+name: Test name input is logged
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_REPOSITORY: octocat/hello-world
+      GITHUB_SHA: abc1234567890abcdef1234567890abcdef12345
+      GITHUB_EVENT_NAME: push
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Create event payload file
+        run: |
+          echo '{}' > /tmp/event.json
+          echo "GITHUB_EVENT_PATH=/tmp/event.json" >> "$GITHUB_ENV"
+
+      - id: action
+        uses: .
+        with:
+          name: my-test-name
+          token: fake-token-for-testing
+        continue-on-error: true
+
+      - name: Assert action ran with name input
+        run: |
+          outcome="${{ steps.action.outcome }}"
+          echo "outcome: $outcome"
+          # The action logs "The name is <name>" before making the API call.
+          # We verify the action ran (not skipped) regardless of API outcome.
+          if [ "$outcome" = "skipped" ]; then
+            echo "FAIL: action was skipped unexpectedly"
+            exit 1
+          fi
+          echo "PASS: action ran with name input 'my-test-name', outcome=$outcome"

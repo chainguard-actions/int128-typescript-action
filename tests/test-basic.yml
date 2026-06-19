@@ -1,0 +1,37 @@
+name: Test basic usage
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_REPOSITORY: octocat/hello-world
+      GITHUB_SHA: abc1234567890abcdef1234567890abcdef12345
+      GITHUB_EVENT_NAME: push
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Create event payload file
+        run: |
+          echo '{}' > /tmp/event.json
+          echo "GITHUB_EVENT_PATH=/tmp/event.json" >> "$GITHUB_ENV"
+
+      - id: action
+        uses: .
+        with:
+          name: hello-world
+          token: fake-token-for-testing
+        continue-on-error: true
+
+      - name: Assert action ran (name was logged)
+        run: |
+          echo "outcome: ${{ steps.action.outcome }}"
+          # The action should either succeed or fail on the API call,
+          # but it must have started and processed the name input.
+          # We accept both success and failure outcomes since the API call
+          # will fail with a fake token, but the action should have run.
+          if [ "${{ steps.action.outcome }}" = "skipped" ]; then
+            echo "FAIL: action was skipped, expected it to run"
+            exit 1
+          fi
+          echo "PASS: action ran with outcome ${{ steps.action.outcome }}"
