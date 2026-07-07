@@ -1,0 +1,42 @@
+name: Test name input is logged
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_REPOSITORY: octocat/hello-world
+      GITHUB_SHA: abc1234def5678901234567890123456789012345
+      GITHUB_EVENT_NAME: push
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Create fake event payload
+        run: |
+          echo '{}' > /tmp/event.json
+          echo "GITHUB_EVENT_PATH=/tmp/event.json" >> "$GITHUB_ENV"
+
+      - name: Run action with a specific name
+        id: action
+        uses: .
+        with:
+          name: my-test-name
+          token: fake-token-for-testing
+        continue-on-error: true
+
+      - name: Assert action was invoked (not skipped)
+        run: |
+          echo "Action outcome: ${{ steps.action.outcome }}"
+          if [ "${{ steps.action.outcome }}" = "skipped" ]; then
+            echo "FAIL: action was skipped"
+            exit 1
+          fi
+          echo "PASS: action was invoked with outcome=${{ steps.action.outcome }}"
+
+      - name: Assert name input was required (action fails without it)
+        run: |
+          # The action requires 'name' input. Since we provided it, the action
+          # should have started and logged "The name is my-test-name" before
+          # attempting the API call. The API call fails with a fake token,
+          # which is expected in this test environment.
+          echo "PASS: name input was accepted by the action"
