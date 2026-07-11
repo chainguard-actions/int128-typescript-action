@@ -1,0 +1,49 @@
+name: Test pull request event context
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_REPOSITORY: actions/checkout
+      GITHUB_SHA: de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      GITHUB_EVENT_NAME: pull_request
+      GITHUB_REF: refs/pull/1/merge
+      GITHUB_HEAD_REF: feature-branch
+      GITHUB_BASE_REF: main
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Create pull_request event payload file
+        run: |
+          mkdir -p /tmp/act-events
+          cat > /tmp/act-events/event.json << 'EOF'
+          {
+            "action": "opened",
+            "pull_request": {
+              "number": 1,
+              "title": "Test PR",
+              "head": {"ref": "feature-branch", "sha": "de0fac2e4500dabe0009e67214ff5f5447ce83dd"},
+              "base": {"ref": "main"}
+            }
+          }
+          EOF
+          echo "GITHUB_EVENT_PATH=/tmp/act-events/event.json" >> $GITHUB_ENV
+
+      - id: action
+        uses: .
+        with:
+          name: test-pr-name
+          token: fake-token-for-testing
+        continue-on-error: true
+
+      - name: Assert action ran in pull_request context
+        env:
+          OUTCOME: ${{ steps.action.outcome }}
+        run: |
+          echo "outcome: $OUTCOME"
+          if [ "$OUTCOME" = "skipped" ]; then
+            echo "FAIL: action was skipped, expected it to run"
+            exit 1
+          fi
+          echo "PASS: action ran in pull_request context with outcome=$OUTCOME (API failure expected without real token)"
