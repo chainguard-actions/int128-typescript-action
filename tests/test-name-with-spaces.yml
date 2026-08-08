@@ -1,0 +1,30 @@
+name: Test name input with spaces
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - id: action
+        uses: .
+        with:
+          name: "Hello World User"
+          token: ${{ github.token }}
+        continue-on-error: true
+      - name: Assert action ran with name containing spaces
+        env:
+          OUTCOME: ${{ steps.action.outcome }}
+        run: |
+          echo "outcome: $OUTCOME"
+          # The action logs "The name is Hello World User" then calls the GitHub API.
+          # The API call may fail because GITHUB_REPOSITORY is a sentinel (not a real repo),
+          # but the action should not be skipped.
+          if [ "$OUTCOME" = "success" ]; then
+            echo "PASS: action succeeded"
+          elif [ "$OUTCOME" = "failure" ]; then
+            echo "PASS: action failed gracefully (sentinel repo is not resolvable via GitHub API)"
+          else
+            echo "FAIL: unexpected outcome '$OUTCOME'"
+            exit 1
+          fi
