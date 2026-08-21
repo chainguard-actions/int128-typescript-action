@@ -1,22 +1,92 @@
-# int128/typescript-action
+# typescript-action [![ts](https://github.com/int128/typescript-action/actions/workflows/ts.yaml/badge.svg)](https://github.com/int128/typescript-action/actions/workflows/ts.yaml)
 
-Template of TypeScript Action
+This is a template of TypeScript action.
+Inspired from https://github.com/actions/typescript-action.
 
-Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at [https://github.com/int128/typescript-action](https://github.com/int128/typescript-action).
+## Features
 
-## Versions
+- Ready to develop with the minimum configs
+  - tsconfig
+  - Biome
+  - Vitest
+- Automated continuous release
+- Keep consistency of generated files
+- Shipped with Renovate config
 
-| Version | Tag | Upstream commit |
-|---------|-----|-----------------|
-| v0.51.0 | [`v0.51.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.51.0) | [`9f41bd5`](https://github.com/int128/typescript-action/commit/9f41bd53af1a0aaf4fe92168b536f4e43d64200e) |
-| v0.52.0 | [`v0.52.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.52.0) | [`2d6015b`](https://github.com/int128/typescript-action/commit/2d6015bce86ea32fae9123dcbbf8f517bbb58635) |
-| v0.53.0 | [`v0.53.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.53.0) | [`f01bfa1`](https://github.com/int128/typescript-action/commit/f01bfa180744d96cca2dea4f73a39c035742a518) |
-| v0.54.0 | [`v0.54.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.54.0) | [`7295dde`](https://github.com/int128/typescript-action/commit/7295dde4c8f34154e9c4f142ee7a4f12c8a74f41) |
-| v0.55.0 | [`v0.55.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.55.0) | [`e58037d`](https://github.com/int128/typescript-action/commit/e58037d342a348e0246cf2d38011ec6db91dd814) |
-| v0.56.0 | [`v0.56.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.56.0) | [`6474e39`](https://github.com/int128/typescript-action/commit/6474e3940ad5757bfdb4ce5619520cdf7e00ed45) |
-| v0.57.0 | [`v0.57.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.57.0) | [`e8b5c7d`](https://github.com/int128/typescript-action/commit/e8b5c7d64536c0ccf0e8d1c64876983a507d8db7) |
-| v0.58.0 | [`v0.58.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.58.0) | [`3d0b872`](https://github.com/int128/typescript-action/commit/3d0b872d22787a2382b35afda79a4c3e6c1d0042) |
-| v0.59.0 | [`v0.59.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.59.0) | [`39f35bf`](https://github.com/int128/typescript-action/commit/39f35bf5d892e0994f9ba2b21b02d88027d16554) |
+## Getting Started
+
+Click `Use this template` to create a repository.
+
+An initial release `v0.0.0` is automatically created by GitHub Actions.
+You can see the generated files in `dist` directory on the tag.
+
+Then, checkout your repository and test it. Node.js is required.
+
+```console
+$ git clone https://github.com/your/repo.git
+
+$ pnpm i
+$ pnpm test
+```
+
+Create a pull request with your change.
+
+After merging the pull request, a new minor release (such as `v0.1.0`) is created.
+
+### Stable release
+
+When you want to create a stable release, change the major version in [release workflow](.github/workflows/release.yaml).
+
+```yaml
+- uses: int128/release-typescript-action@v1
+  with:
+    major-version: 1
+```
+
+Then a new stable release `v1.0.0` is created.
+
+## Specification
+
+To run this action, create a workflow as follows:
+
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: int128/typescript-action@v1
+        with:
+          name: hello
+```
+
+### Inputs
+
+| Name   | Default    | Description   |
+| ------ | ---------- | ------------- |
+| `name` | (required) | example input |
+
+### Outputs
+
+| Name      | Description    |
+| --------- | -------------- |
+| `example` | example output |
+
+## Development
+
+### Release workflow
+
+When a pull request is merged into main branch, a new minor release is created by GitHub Actions.
+See https://github.com/int128/release-typescript-action for details.
+
+### Keep consistency of generated files
+
+If a pull request needs to be fixed by Prettier, an additional commit to fix it will be added by GitHub Actions.
+See https://github.com/int128/update-generated-files-action for details.
+
+### Dependency update
+
+You can enable Renovate to update the dependencies.
+This repository is shipped with the config https://github.com/int128/typescript-action-renovate-config.
 
 ## Privacy
 
