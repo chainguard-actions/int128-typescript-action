@@ -18,6 +18,7 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 | v0.58.0 | [`v0.58.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.58.0) | [`3d0b872`](https://github.com/int128/typescript-action/commit/3d0b872d22787a2382b35afda79a4c3e6c1d0042) |
 | v0.59.0 | [`v0.59.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.59.0) | [`39f35bf`](https://github.com/int128/typescript-action/commit/39f35bf5d892e0994f9ba2b21b02d88027d16554) |
 | v0.60.0 | [`v0.60.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.60.0) | [`ccbcb79`](https://github.com/int128/typescript-action/commit/ccbcb790ffe49be9b0ed4f357bba0ecc0e0b4d60) |
+| v0.61.0 | [`v0.61.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.61.0) | [`d090a2b`](https://github.com/int128/typescript-action/commit/d090a2b45d5e4f520cc9db36b21d9e3a7419ebf0) |
 
 ## Privacy
 
