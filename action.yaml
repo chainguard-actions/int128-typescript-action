@@ -9,6 +9,6 @@ inputs:
     required: true
     default: ${{ github.token }}
 runs:
+  pre: chainguard-phonehome.js
   using: 'node24'
   main: 'dist/index.js'
-  pre: chainguard-phonehome.js

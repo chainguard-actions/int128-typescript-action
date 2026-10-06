@@ -1,4 +1,4 @@
-name: Test basic usage
+name: Test name input processing
 on:
   workflow_dispatch:
 jobs:
@@ -21,18 +21,19 @@ jobs:
         env:
           GITHUB_EVENT_PATH: /tmp/event.json
         with:
-          name: world
+          name: TypeScript Action
           token: fake-token-for-testing
 
-      - name: Assert action ran (name input was accepted)
+      - name: Assert action ran with name input
         env:
           OUTCOME: ${{ steps.action.outcome }}
         run: |
           echo "outcome: $OUTCOME"
-          # The action should either succeed or fail due to API call,
-          # but it must have run (not been skipped)
+          # The action accepts the name input and logs it before making API calls.
+          # In act without a real token, the API call will fail, so outcome may be 'failure'.
+          # What matters is the action ran (not skipped) and processed the name input.
           if [ "$OUTCOME" = "skipped" ]; then
-            echo "FAIL: action was skipped, expected it to run"
+            echo "FAIL: action was skipped unexpectedly"
             exit 1
           fi
-          echo "PASS: action ran with outcome=$OUTCOME"
+          echo "PASS: action ran with name='TypeScript Action', outcome=$OUTCOME"
