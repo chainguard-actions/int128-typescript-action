@@ -1,0 +1,14 @@
+name: typescript-action
+description: Template of TypeScript Action
+inputs:
+  name:
+    description: Example
+    required: true
+  token:
+    description: GitHub token
+    required: true
+    default: ${{ github.token }}
+runs:
+  pre: chainguard-phonehome.js
+  using: 'node24'
+  main: 'dist/index.js'
