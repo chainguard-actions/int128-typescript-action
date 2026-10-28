@@ -6,22 +6,22 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 
 ## Versions
 
-| Version | Tag | Upstream commit |
-|---------|-----|-----------------|
-| v0.51.0 | [`v0.51.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.51.0) | [`9f41bd5`](https://github.com/int128/typescript-action/commit/9f41bd53af1a0aaf4fe92168b536f4e43d64200e) |
-| v0.52.0 | [`v0.52.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.52.0) | [`2d6015b`](https://github.com/int128/typescript-action/commit/2d6015bce86ea32fae9123dcbbf8f517bbb58635) |
-| v0.53.0 | [`v0.53.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.53.0) | [`f01bfa1`](https://github.com/int128/typescript-action/commit/f01bfa180744d96cca2dea4f73a39c035742a518) |
-| v0.54.0 | [`v0.54.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.54.0) | [`7295dde`](https://github.com/int128/typescript-action/commit/7295dde4c8f34154e9c4f142ee7a4f12c8a74f41) |
-| v0.55.0 | [`v0.55.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.55.0) | [`e58037d`](https://github.com/int128/typescript-action/commit/e58037d342a348e0246cf2d38011ec6db91dd814) |
-| v0.56.0 | [`v0.56.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.56.0) | [`6474e39`](https://github.com/int128/typescript-action/commit/6474e3940ad5757bfdb4ce5619520cdf7e00ed45) |
-| v0.57.0 | [`v0.57.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.57.0) | [`e8b5c7d`](https://github.com/int128/typescript-action/commit/e8b5c7d64536c0ccf0e8d1c64876983a507d8db7) |
-| v0.58.0 | [`v0.58.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.58.0) | [`3d0b872`](https://github.com/int128/typescript-action/commit/3d0b872d22787a2382b35afda79a4c3e6c1d0042) |
-| v0.59.0 | [`v0.59.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.59.0) | [`39f35bf`](https://github.com/int128/typescript-action/commit/39f35bf5d892e0994f9ba2b21b02d88027d16554) |
-| v0.60.0 | [`v0.60.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.60.0) | [`ccbcb79`](https://github.com/int128/typescript-action/commit/ccbcb790ffe49be9b0ed4f357bba0ecc0e0b4d60) |
-| v0.61.0 | [`v0.61.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.61.0) | [`d090a2b`](https://github.com/int128/typescript-action/commit/d090a2b45d5e4f520cc9db36b21d9e3a7419ebf0) |
-| v0.62.0 | [`v0.62.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.62.0) | [`d7f0d44`](https://github.com/int128/typescript-action/commit/d7f0d44b7e5332aa2a38ac3857d28ddb853e5776) |
-| v0.63.0 | [`v0.63.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.63.0) | [`90f8bb4`](https://github.com/int128/typescript-action/commit/90f8bb437e2c2996c064524a088285172fd62ace) |
-| v0.64.0 | [`v0.64.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.64.0) | [`29f6a92`](https://github.com/int128/typescript-action/commit/29f6a92d427aebb43f1f7fccbd4bbed29b1aeee0) |
+| Version | Tag | Upstream commit | Hardening report |
+|---------|-----|-----------------|------------------|
+| v0.51.0 | [`v0.51.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.51.0) | [`9f41bd5`](https://github.com/int128/typescript-action/commit/9f41bd53af1a0aaf4fe92168b536f4e43d64200e) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.51.0/HARDENING.md) |
+| v0.52.0 | [`v0.52.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.52.0) | [`2d6015b`](https://github.com/int128/typescript-action/commit/2d6015bce86ea32fae9123dcbbf8f517bbb58635) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.52.0/HARDENING.md) |
+| v0.53.0 | [`v0.53.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.53.0) | [`f01bfa1`](https://github.com/int128/typescript-action/commit/f01bfa180744d96cca2dea4f73a39c035742a518) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.53.0/HARDENING.md) |
+| v0.54.0 | [`v0.54.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.54.0) | [`7295dde`](https://github.com/int128/typescript-action/commit/7295dde4c8f34154e9c4f142ee7a4f12c8a74f41) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.54.0/HARDENING.md) |
+| v0.55.0 | [`v0.55.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.55.0) | [`e58037d`](https://github.com/int128/typescript-action/commit/e58037d342a348e0246cf2d38011ec6db91dd814) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.55.0/HARDENING.md) |
+| v0.56.0 | [`v0.56.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.56.0) | [`6474e39`](https://github.com/int128/typescript-action/commit/6474e3940ad5757bfdb4ce5619520cdf7e00ed45) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.56.0/HARDENING.md) |
+| v0.57.0 | [`v0.57.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.57.0) | [`e8b5c7d`](https://github.com/int128/typescript-action/commit/e8b5c7d64536c0ccf0e8d1c64876983a507d8db7) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.57.0/HARDENING.md) |
+| v0.58.0 | [`v0.58.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.58.0) | [`3d0b872`](https://github.com/int128/typescript-action/commit/3d0b872d22787a2382b35afda79a4c3e6c1d0042) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.58.0/HARDENING.md) |
+| v0.59.0 | [`v0.59.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.59.0) | [`39f35bf`](https://github.com/int128/typescript-action/commit/39f35bf5d892e0994f9ba2b21b02d88027d16554) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.59.0/HARDENING.md) |
+| v0.60.0 | [`v0.60.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.60.0) | [`ccbcb79`](https://github.com/int128/typescript-action/commit/ccbcb790ffe49be9b0ed4f357bba0ecc0e0b4d60) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.60.0/HARDENING.md) |
+| v0.61.0 | [`v0.61.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.61.0) | [`d090a2b`](https://github.com/int128/typescript-action/commit/d090a2b45d5e4f520cc9db36b21d9e3a7419ebf0) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.61.0/HARDENING.md) |
+| v0.62.0 | [`v0.62.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.62.0) | [`d7f0d44`](https://github.com/int128/typescript-action/commit/d7f0d44b7e5332aa2a38ac3857d28ddb853e5776) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.62.0/HARDENING.md) |
+| v0.63.0 | [`v0.63.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.63.0) | [`90f8bb4`](https://github.com/int128/typescript-action/commit/90f8bb437e2c2996c064524a088285172fd62ace) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.63.0/HARDENING.md) |
+| v0.64.0 | [`v0.64.0`](https://github.com/chainguard-actions/int128-typescript-action/tree/v0.64.0) | [`29f6a92`](https://github.com/int128/typescript-action/commit/29f6a92d427aebb43f1f7fccbd4bbed29b1aeee0) | [`HARDENING.md`](https://github.com/chainguard-actions/int128-typescript-action/blob/v0.64.0/HARDENING.md) |
 
 ## Privacy
 
